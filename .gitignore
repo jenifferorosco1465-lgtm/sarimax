@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+.next/
+.vercel/
+results/models/*.pkl
+results/logs/*.log
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep

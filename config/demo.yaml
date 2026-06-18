@@ -1,0 +1,33 @@
+project:
+  name: sarimax_demo
+  seed: 2026
+data:
+  target_file: data/raw/demo_monthly.csv
+  exog_file: data/raw/demo_monthly.csv
+  target_column: ipc
+  exog_columns: [oni]
+  date_column: date
+  frequency: MS
+  start: "2005-01-01"
+  end: null
+features:
+  target_transform: level
+  exog_lags: [0, 3, 6]
+  seasonal_period: 12
+validation:
+  initial_train: 120
+  horizon: 12
+  step: 6
+models:
+  baseline: seasonal_naive
+  sarima_grid:
+    p: [1]
+    d: [0]
+    q: [0]
+    P: [1]
+    D: [0]
+    Q: [0]
+  criterion: aic
+outputs:
+  root: results
+  dashboard: dashboard/public/data

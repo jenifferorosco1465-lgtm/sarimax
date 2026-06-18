@@ -1,0 +1,33 @@
+project:
+  name: sarimax_replica_ecuador
+  seed: 2026
+data:
+  target_file: data/raw/inec_ipc.xlsx
+  exog_file: data/raw/noaa_oni.csv
+  target_column: ipc
+  exog_columns: [oni]
+  date_column: date
+  frequency: MS
+  start: "2005-01-01"
+  end: null
+features:
+  target_transform: log_diff_100
+  exog_lags: [0, 1, 3, 6, 9, 12]
+  seasonal_period: 12
+validation:
+  initial_train: 120
+  horizon: 12
+  step: 1
+models:
+  baseline: seasonal_naive
+  sarima_grid:
+    p: [0, 1, 2]
+    d: [0, 1]
+    q: [0, 1, 2]
+    P: [0, 1]
+    D: [0, 1]
+    Q: [0, 1]
+  criterion: aic
+outputs:
+  root: results
+  dashboard: dashboard/public/data

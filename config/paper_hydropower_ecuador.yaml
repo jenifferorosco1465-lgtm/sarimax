@@ -1,0 +1,41 @@
+project:
+  id: hydropower_ecuador_replication
+  mode: exact_or_reconstructed
+  seed: 20260617
+paper:
+  doi: 10.3390/su11236539
+  train_start: 2000-01-01
+  train_end: 2014-12-01
+  test_start: 2015-01-01
+  test_end: 2015-12-01
+data:
+  frequency: MS
+  date_column: date
+  target_column: hydropower_gwh
+  exogenous_candidates:
+    - precip_napo_mm
+    - precip_pastaza_mm
+    - precip_santiago_mm
+    - precip_total_mean_mm
+  required_columns:
+    - date
+    - hydropower_gwh
+    - precip_napo_mm
+    - precip_pastaza_mm
+    - precip_santiago_mm
+model:
+  baseline_order: [1, 1, 1]
+  baseline_seasonal_order: [1, 0, 0, 12]
+  trend: n
+  enforce_stationarity: false
+  enforce_invertibility: false
+validation:
+  holdout_months: 12
+  rolling_origin: true
+  horizons: [1, 3, 6, 12]
+  metrics: [mae, rmse, mape, mase]
+  diagnostics: [ljung_box, jarque_bera, arch_lm]
+outputs:
+  processed_dataset: data/processed/hydropower_ecuador_monthly.csv
+  metrics: results/tables/hydropower_replication_metrics.csv
+  forecasts: results/forecasts/hydropower_replication_forecasts.csv

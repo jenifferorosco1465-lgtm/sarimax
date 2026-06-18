@@ -1,0 +1,25 @@
+search:
+  max_results_per_query: 30
+  from_year: 2000
+  languages: [en, es]
+  queries:
+    - 'SARIMAX hydropower precipitation forecasting'
+    - 'ARIMAX hydroelectric generation rainfall'
+    - 'SARIMAX Ecuador forecasting'
+    - 'SARIMAX Latin America energy forecasting'
+    - 'SARIMAX inflation climate El Nino'
+  priority_terms:
+    - Ecuador
+    - Latin America
+    - hydropower
+    - precipitation
+    - electricity generation
+    - ENSO
+    - inflation
+sources:
+  crossref: true
+  openalex: true
+outputs:
+  raw_json: references/search_results
+  matrix_csv: references/literature/literature_matrix.csv
+  shortlist_md: references/literature/shortlist.md

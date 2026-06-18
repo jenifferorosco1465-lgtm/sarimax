@@ -1,0 +1,34 @@
+---
+title: "Inflación y El Niño en Ecuador: réplica y extensión mediante SARIMAX"
+author: "Edwin Vinicio Arcos Naranjo"
+format:
+  html: toc
+  pdf: default
+bibliography: references.bib
+execute:
+  echo: false
+---
+
+## Resumen
+
+Este estudio replica conceptualmente y extiende una aplicación SARIMAX al IPC ecuatoriano, incorporando ONI como regresor exógeno y evaluación genuina fuera de muestra.
+
+## Introducción
+
+La motivación combina predicción macroeconómica, estacionalidad y choques climáticos.
+
+## Datos
+
+Los datos provienen del INEC y NOAA. Toda transformación se ejecuta mediante el pipeline versionado.
+
+## Método
+
+Se comparan seasonal naïve, SARIMA y SARIMAX mediante origen móvil.
+
+## Resultados
+
+Los resultados se insertarán desde `results/tables` una vez ejecutada la réplica oficial.
+
+## Limitaciones
+
+La disponibilidad futura de regresores exógenos debe modelarse de forma explícita.

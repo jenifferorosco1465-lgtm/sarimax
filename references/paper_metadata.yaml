@@ -1,0 +1,40 @@
+primary_paper:
+  title: "Time Series Analysis for Predicting Hydroelectric Power Production: The Ecuador Case"
+  authors:
+    - Javier Barzola-Monteses
+    - Manuel Martínez-López
+    - María Espinoza-Andaluz
+    - Juan Gómez-Romero
+    - W. Fajardo
+  year: 2019
+  journal: Sustainability
+  volume: 11
+  issue: 23
+  article: 6539
+  doi: "10.3390/su11236539"
+  url: "https://doi.org/10.3390/su11236539"
+  geography: Ecuador
+  frequency: monthly
+  estimation_period: "2000-01/2014-12"
+  validation_period: "2015-01/2015-12"
+  dependent_variable: "Monthly gross hydroelectric production (GWh)"
+  exogenous_variables:
+    - "Average monthly precipitation in Napo basin (mm)"
+    - "Average monthly precipitation in Pastaza basin (mm)"
+    - "Average monthly precipitation in Santiago basin (mm)"
+    - "Total average monthly precipitation across basins (mm)"
+  reported_best_forecast_model: "ARIMAX (1,1,1)(1,0,0)[12] with Napo precipitation"
+  reported_metrics:
+    MAE_GWh: 70.81
+    MAPE_percent: 10.17
+    MASE: 0.57
+  original_data_sources:
+    hydropower: "ARCONEL (Ecuador Electricity Regulation and Control Agency)"
+    precipitation: "INAMHI pluviometric stations"
+  replication_status: "Conceptual until original raw series are recovered and checksummed"
+secondary_extension:
+  title: "Análisis comparativo entre los modelos SARIMAX y STAR para la predicción del índice de precios al consumidor durante el fenómeno del Niño en el periodo 2023-24"
+  author: "Andrés Fabricio Chasiliquín Armendáriz"
+  year: 2024
+  institution: "Universidad de las Américas"
+  role: "Secondary Ecuador application for an inflation-and-ENSO extension"

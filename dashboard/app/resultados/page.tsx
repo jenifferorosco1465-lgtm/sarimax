@@ -1,0 +1,3 @@
+import fs from "fs";import path from "path";
+function load(){try{return JSON.parse(fs.readFileSync(path.join(process.cwd(),"public/data/summary.json"),"utf8"))}catch{return []}}
+export default function Resultados(){const rows=load();return <><h1>Resultados de backtesting</h1>{rows.length===0?<div className="card">Ejecute el pipeline para generar resultados oficiales.</div>:<table><thead><tr><th>Modelo</th><th>MAE</th><th>RMSE</th><th>sMAPE</th></tr></thead><tbody>{rows.map((r:any)=><tr key={r.model}><td>{r.model}</td><td>{r.mae.toFixed(4)}</td><td>{r.rmse.toFixed(4)}</td><td>{r.smape.toFixed(2)}%</td></tr>)}</tbody></table>}</>}

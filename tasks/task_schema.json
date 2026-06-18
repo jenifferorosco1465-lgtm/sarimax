@@ -1,0 +1,11 @@
+{
+  "id": "T000",
+  "title": "",
+  "owner_agent": "",
+  "status": "todo",
+  "inputs": [],
+  "outputs": [],
+  "acceptance_criteria": [],
+  "dependencies": [],
+  "risk": "medium"
+}
